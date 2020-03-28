@@ -1,13 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+    font-family: "Lora";
+}
+
+.nav-link-active {
+    font-size: 12px;
+}
+
+.elevated {
+    box-shadow: 0px 4px 6px hsla(0, 0%, .1);
+}
+
+.bg {background: hsl(35, 86%, 97%);}
+.scroll-snap-item {scroll-snap-align: center;}
+
+.teal-accent-light:hover {
+    border-bottom: 1px solid #64D5CA;
+}
+
+.teal-accent:hover {
+    border-bottom: 3px solid #64D5CA;
+}
+
+.contact-icon {
+    width: 50 !important;
+    height: 50 !important;
+}
+
+h1 {
+    font-family: "Lora";
+    font-size: 48px;
+    margin: 0.33em 0;
+}
+
+h2 {
+    font-family: "Lora";
+    font-size: 36px;
+    margin: 0.67em 0;
+}
+
+h3 {
+    font-family: "Merriweather";
+    font-size: 20px;
+}
+
+h4 {
+    font-family: "Merriweather";
+    font-style: "italic";
+    font-size: 16px;
+}
+
+a {
+    font-family: "Merriweather";
+    font-weight: bold;
+}
+
+p {
+    font-family: "Merriweather";
+    font-size: 16px;
+}
+
+li {
+    font-family: "Merriweather";
+    font-size: 16px;
+}
+
 html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+/*
 article,
 aside,
 details,
@@ -620,3 +693,4 @@ pre tt:after {
     font-size: 100%;
   }
 }
+*/
