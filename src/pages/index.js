@@ -74,37 +74,33 @@ const About = () => (
       maxWidth: 1100,
       minHeight: 1000,
     }}>
-      <div class="text-right" style={{ width: "50%", minHeight: "80vh", marginTop: 100, paddingRight: "5%", borderRight: "2px dashed #64D5CA" }}>
-        <div style={{height: "20vh"}}>
-          <h2 class="text-grey-darkest">about</h2>
-        </div>
-        <div style={{height: "20vh"}}>
-          <h2 class="text-grey-darkest">education</h2>
-        </div>
-        <div style={{height: "20vh"}}>
-        <h2 class="text-grey-darkest">projects</h2>
-        </div>
-        <div style={{height: "20vh"}}>
-        <h2 class="text-grey-darkest">blog</h2>
-        </div>
-      </div>
-      <div style={{ width: "50%", paddingLeft: "5%"}}>
-        <div style={{minHeight: "20vh", marginTop: "13.5vh"}}>
-          <p class="text-grey-darker">I'm a software enthusiast who's loved programming since I was 8 (Flash Actionscript 2!), pianist and cellist, a developing 中文 and Spanish speaker, wannabe chef, urbanite, statistician, 150+ WPM typist, and all around make-things-happen kind of guy.</p>
-        </div>
-        <div style={{minHeight: "20vh", marginTop: "2.5vh"}}>
-          <p class="text-grey-darker">I'm a 3rd year undergraduate student and Presidential Scholar at BYU, <a class="teal-accent">graduating 2021</a> with a double B.S. in Computer Science and Statistics.  </p>
-          <br />
-          <p class="text-grey-darker">I'm looking for a <a href={resumeLink} target="_blank" rel="noopener noreferrer" class="teal-accent">2021 summer internship</a> and <a href={resumeLink} rel="noopener noreferrer" class="teal-accent">full time work starting winter 2022</a></p>
-        </div>
-        <div style={{minHeight: "20vh", marginTop: "2vh"}}>
-          <p class="text-grey-darker">Some of my favorite self-driven pedagogical projects include <ProjectLink href={tanksHref}>Tank Battles</ProjectLink>, <ProjectLink href={corridorsHref}>Corridors</ProjectLink>, and <ProjectLink href={politweetHref}>Politweet</ProjectLink>.  Older projects include <ProjectLink href={courseapiHref}>BYU Course API</ProjectLink> and <ProjectLink href={qlearnHref}>Rat Run</ProjectLink>.</p>
-        </div>
-        <div style={{minHeight: "20vh", marginTop: "2vh"}}>
-          <p class="text-grey-darker">Nothing yet.</p>
-        </div>
-      </div>
-    </div>
+      <table style={{width: "100%", minHeight: "90vh", marginTop: 50}} cellpadding="30">
+        <tr>
+          <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">about</h2></td>
+          <td align="left"><p class="text-grey-darker">I'm a software enthusiast who's loved programming since I was 8 (Flash Actionscript 2!), pianist and cellist, a developing 中文 and Spanish speaker, wannabe chef, urbanite, statistician, 150+ WPM typist, and all around make-things-happen kind of guy.</p></td>
+        </tr>
+        <tr>
+          <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">education</h2></td>
+          <td align="left">
+            <p class="text-grey-darker">I'm a 3rd year undergraduate student and Presidential Scholar at BYU, <a class="teal-accent">graduating 2021</a> with a double B.S. in Computer Science and Statistics.  </p>
+            <br />
+            <p class="text-grey-darker">I'm looking for a <a href={resumeLink} target="_blank" rel="noopener noreferrer" class="teal-accent">2021 summer internship</a> and <a href={resumeLink} rel="noopener noreferrer" class="teal-accent">full time work starting winter 2022</a></p>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">projects</h2></td>
+          <td align="left">
+            <p class="text-grey-darker">Some of my favorite self-driven pedagogical projects include <ProjectLink href={tanksHref}>Tank Battles</ProjectLink>, <ProjectLink href={corridorsHref}>Corridors</ProjectLink>, and <ProjectLink href={politweetHref}>Politweet</ProjectLink>.  Older projects include <ProjectLink href={courseapiHref}>BYU Course API</ProjectLink> and <ProjectLink href={qlearnHref}>Rat Run</ProjectLink>.</p>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">blog</h2></td>
+          <td align="left">
+            <p class="text-grey-darker">Nothing yet.</p>
+          </td>
+        </tr>
+      </table>
+  </div>
 
 )
 
