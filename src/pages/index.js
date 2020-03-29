@@ -1,18 +1,13 @@
 import React from "react"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDoubleDown, faFile, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleDown, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons'
 import Layout from "../components/layout"
 import Avatar from "../components/graphics/avatar"
 import WhatsApp from "../components/graphics/whatsapp"
 import Microsoft from "../components/graphics/microsoft"
 import GE from "../components/graphics/ge"
-import BYU from "../components/graphics/byu"
-import BYUCampus from "../components/graphics/byu-campus"
-import SEO from "../components/seo"
-import Graph from "../components/graphics/graph"
-import Language from "../components/graphics/language"
 
 const resumeLink = "https://drive.google.com/file/d/1ZwIDmLNkNWzzU1KEfYCJEzu1dWXQLoea/view"
 const politweetHref = "https://github.com/aayc/politweet/blob/master/Politweet.pdf"
@@ -55,15 +50,14 @@ const IndexPage = () => {
 }
 
 const Splash = () => (
-    <div class="scroll-snap-item" style={{
+    <div class="flex-col scroll-snap-item" style={{
         margin: "0 auto",
         height: "100vh",
         minHeight: 1000
-      }}
-      class="flex flex-col justify-center align-middle">
+      }}>
       <center>
-        <br /><br /><br /><br /><br />
-        <Avatar style={{marginTop: "3rem", boxShadow: "10px 10px 10px hsla(0, 10%, 0.1)" }}/>
+        <div style={{height: 250}}/>
+        <Avatar/>
         <h1 class="text-grey-darkest">Aaron Chan</h1>
         <h3 class="text-grey-dark"><i>software eng, musician, statistician</i></h3>
         <table cellpadding="10" style={{fontSize: "1.2rem"}}>
@@ -95,8 +89,7 @@ const MobileSplash = () => (
       }}
       class="flex flex-col">
       <center>
-        <br /><br /><br /><br /><br />
-        <Avatar style={{marginTop: "3rem", boxShadow: "10px 10px 10px hsla(0, 10%, 0.1)" }}/>
+        <Avatar />
         <h1 class="text-grey-darkest">Aaron Chan</h1>
         <h3 class="text-grey-dark"><i>software eng, musician, statistician</i></h3>
         <table cellpadding="10" style={{fontSize: "1.2rem"}}>
@@ -127,7 +120,7 @@ const About = () => (
         <tr>
           <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">education</h2></td>
           <td align="left">
-            <p class="text-grey-darker">I'm a 3rd year undergraduate student and Presidential Scholar at BYU, <a class="teal-accent">graduating 2021</a> with a double B.S. in Computer Science and Statistics.  </p>
+            <p class="text-grey-darker">I'm a 3rd year undergraduate student and Presidential Scholar at BYU, <span class="teal-accent"><b>graduating 2021</b></span> with a double B.S. in Computer Science and Statistics.  </p>
             <br />
             <p class="text-grey-darker">I'm looking for a <a href={resumeLink} target="_blank" rel="noopener noreferrer" class="teal-accent">2021 summer internship</a> and <a href={resumeLink} rel="noopener noreferrer" class="teal-accent">full time work starting winter 2022</a></p>
           </td>
