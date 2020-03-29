@@ -25,9 +25,16 @@ const ProjectLink = ({href, children}) => (
 )
 
 function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-};
-
+  try {
+              if(/Android|webOS|iPhone|iPad|iPod|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent)) {
+                return true;
+    };
+    return false;
+  } catch(e) {
+    console.log("Error in isMobile");
+    return false;
+  }
+}
 const IndexPage = () => {
   if (!isMobileDevice()) {
     return (
@@ -41,7 +48,7 @@ const IndexPage = () => {
   else {
     return (
       <Layout>
-        <Splash />
+        <MobileSplash />
       </Layout>
     )
   }
@@ -78,6 +85,31 @@ const Splash = () => (
           icon={faAngleDoubleDown} />
       </center>
     </div>
+)
+
+const MobileSplash = () => (
+    <div style={{
+        margin: "0 auto",
+        height: "100vh",
+        minHeight: 700
+      }}
+      class="flex flex-col">
+      <center>
+        <br /><br /><br /><br /><br />
+        <Avatar style={{marginTop: "3rem", boxShadow: "10px 10px 10px hsla(0, 10%, 0.1)" }}/>
+        <h1 class="text-grey-darkest">Aaron Chan</h1>
+        <h3 class="text-grey-dark"><i>software eng, musician, statistician</i></h3>
+        <table cellpadding="10" style={{fontSize: "1.2rem"}}>
+          <tr>
+            <td> <a href="mailto:aaron.y.chan64@gmail.com" rel="noopener noreferrer"><FontAwesomeIcon class="text-grey-dark teal-accent-light fa-fw" icon={faEnvelope} /></a> </td>
+            <td> <a href="https://www.facebook.com/aaron.chan.92505" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon class="text-grey-dark teal-accent-light fa-fw" icon={faFacebook} /></a> </td>
+            <td> <a href="https://github.com/aayc" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon class="text-grey-dark teal-accent-light fa-fw" icon={faGithub} /></a> </td>
+            <td> <a href="https://www.linkedin.com/in/aaron-y-chan/" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon class="text-grey-dark teal-accent-light fa-fw" icon={faLinkedin} /></a> </td>
+          </tr>
+        </table>
+      </center>
+  </div>
+
 )
 
 const About = () => (
