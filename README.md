@@ -2,4 +2,4 @@
 
 ![Preview](./src/images/preview.png)
 
-View [here](https://aaronchan.dev)
+Made with [Gatsby](https://www.gatsbyjs.org).  Check it out [here](https://aaronchan.dev)
