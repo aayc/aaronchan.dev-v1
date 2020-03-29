@@ -91,7 +91,7 @@ const MobileSplash = () => (
     <div style={{
         margin: "0 auto",
         height: "100vh",
-        minHeight: 700
+        minHeight: 500
       }}
       class="flex flex-col">
       <center>
