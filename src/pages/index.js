@@ -24,14 +24,27 @@ const ProjectLink = ({href, children}) => (
   <a href={href} class="text-grey-darker teal-accent" rel="noreferrer noopener" target="_blank">{children}</a>
 )
 
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
+
 const IndexPage = () => {
-  return (
-    <Layout>
-      <Splash />
-      <About />
-      <WorkExperience />
-    </Layout>
-  )
+  if (!isMobileDevice()) {
+    return (
+      <Layout>
+        <Splash />
+        <About />
+        <WorkExperience />
+      </Layout>
+    )
+  }
+  else {
+    return (
+      <Layout>
+        <Splash />
+      </Layout>
+    )
+  }
 }
 
 const Splash = () => (
