@@ -24,26 +24,14 @@ const ProjectLink = ({href, children}) => (
   <a href={href} class="text-grey-darker teal-accent" rel="noreferrer noopener" target="_blank">{children}</a>
 )
 
-function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-}
-
 const IndexPage = () => {
-  if (isMobileDevice()) {
-    return (
-      <Layout>
-        <Splash />
-      </Layout>
-    )
-  } else {
-   return (
-      <Layout>
-        <Splash />
-        <About />
-        <WorkExperience />
-      </Layout>
-   )
-  }
+  return (
+    <Layout>
+      <Splash />
+      <About />
+      <WorkExperience />
+    </Layout>
+  )
 }
 
 const Splash = () => (
@@ -65,7 +53,6 @@ const Splash = () => (
             <td> <a href="https://www.linkedin.com/in/aaron-y-chan/" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon class="text-grey-dark teal-accent-light fa-fw" icon={faLinkedin} /></a> </td>
           </tr>
         </table>
-        {!isMobileDevice() ?
         <FontAwesomeIcon class="text-grey-dark" style={{
           width: 60,
           height: 60,
@@ -75,7 +62,6 @@ const Splash = () => (
           border: "2px dotted hsl(207, 12%, 43%)"
         }}
           icon={faAngleDoubleDown} />
-        : <br />}
       </center>
     </div>
 )
