@@ -7,10 +7,8 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.css"
 import "./colors.css"
 

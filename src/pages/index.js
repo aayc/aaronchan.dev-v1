@@ -75,7 +75,7 @@ const Splash = () => (
           border: "2px dotted hsl(207, 12%, 43%)"
         }}
           icon={faAngleDoubleDown} />
-        : </>}
+        : <br />}
       </center>
     </div>
 )
