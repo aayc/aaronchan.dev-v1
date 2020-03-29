@@ -69,12 +69,12 @@ li {
 }
 
 html {
-    font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 body {
     margin: 0;
+    scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
     overflow: scroll;
     -webkit-font-smoothing: antialiased;

@@ -24,16 +24,37 @@ const ProjectLink = ({href, children}) => (
   <a href={href} class="text-grey-darker teal-accent" rel="noreferrer noopener" target="_blank">{children}</a>
 )
 
-const IndexPage = () => (
-  <Layout>
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
+const IndexPage = () => {
+  if (isMobileDevice()) {
+    return (
+      <Layout>
+        <Splash />
+      </Layout>
+    )
+  } else {
+   return (
+      <Layout>
+        <Splash />
+        <About />
+        <WorkExperience />
+      </Layout>
+   )
+  }
+}
+
+const Splash = () => (
     <div class="scroll-snap-item" style={{
         margin: "0 auto",
         height: "100vh",
       }}
       class="flex flex-col justify-center align-middle">
       <center>
-        <br /> <br /> <br /> <br/>
-        <Avatar style={{boxShadow: "10px 10px 10px hsla(0, 10%, 0.1)" }}/>
+        <br /><br /><br /><br /><br />
+        <Avatar style={{marginTop: "3rem", boxShadow: "10px 10px 10px hsla(0, 10%, 0.1)" }}/>
         <h1 class="text-grey-darkest">Aaron Chan</h1>
         <h3 class="text-grey-dark"><i>software eng, musician, statistician</i></h3>
         <table cellpadding="10" style={{fontSize: "1.2rem"}}>
@@ -44,8 +65,7 @@ const IndexPage = () => (
             <td> <a href="https://www.linkedin.com/in/aaron-y-chan/" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon class="text-grey-dark teal-accent-light fa-fw" icon={faLinkedin} /></a> </td>
           </tr>
         </table>
-        {/*<a class="text-grey-dark teal-accent" href="#">contact me</a>*/}
-        <br /> <br /> <br /> <br />
+        {!isMobileDevice() ?
         <FontAwesomeIcon class="text-grey-dark" style={{
           width: 60,
           height: 60,
@@ -55,9 +75,12 @@ const IndexPage = () => (
           border: "2px dotted hsl(207, 12%, 43%)"
         }}
           icon={faAngleDoubleDown} />
+        : </>}
       </center>
     </div>
+)
 
+const About = () => (
     <div class="flex scroll-snap-item" style={{
       margin: "0 auto",
       height: "100vh",
@@ -90,15 +113,14 @@ const IndexPage = () => (
           <p class="text-grey-darker">Some of my favorite self-driven pedagogical projects include <ProjectLink href={tanksHref}>Tank Battles</ProjectLink>, <ProjectLink href={corridorsHref}>Corridors</ProjectLink>, and <ProjectLink href={politweetHref}>Politweet</ProjectLink>.  Older projects include <ProjectLink href={courseapiHref}>BYU Course API</ProjectLink> and <ProjectLink href={qlearnHref}>Rat Run</ProjectLink>.</p>
         </div>
         <div style={{height: "20vh", marginTop: "2vh"}}>
-          <ul>
-            <li><a href="#" class="text-grey-darker teal-accent">I promise if I write something I'll put it here.</a></li>
-          </ul>
+          <p class="text-grey-darker">Nothing yet.</p>
         </div>
       </div>
-
     </div>
 
+)
 
+const WorkExperience = () => (
     <div class="scroll-snap-item" style={{
       maxWidth: 1200,
       margin: "0 auto",
@@ -135,7 +157,7 @@ const IndexPage = () => (
         </CompanyColumn>
       </div>
     </div>
-  </Layout>
+
 )
 
 const CompanyColumn = ({ title, logo, role, children }) => (
