@@ -115,26 +115,28 @@ const About = () => (
       <table style={{width: "100%", minHeight: "90vh", marginTop: 50}} cellpadding="30">
         <tr>
           <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">about</h2></td>
-          <td align="left"><p class="text-grey-darker">I'm a software enthusiast who's loved programming since I was 8 (Flash Actionscript 2!), pianist and cellist, a developing 中文 and Spanish speaker, wannabe chef, urbanite, statistician, 150+ WPM typist, and all around make-things-happen kind of guy.</p></td>
+          <td align="left">
+            <p class="fade-in-on-view text-grey-darker">I'm a software enthusiast who's loved programming since I was 8 (Flash Actionscript 2!), pianist and cellist, a developing 中文 and Spanish speaker, wannabe chef, urbanite, statistician, 150+ WPM typist, and all around make-things-happen kind of guy.</p>
+          </td>
         </tr>
         <tr>
           <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">education</h2></td>
           <td align="left">
-            <p class="text-grey-darker">I'm a 3rd year undergraduate student and Presidential Scholar at BYU, <span class="teal-accent"><b>graduating 2021</b></span> with a double B.S. in Computer Science and Statistics.  </p>
+            <p class="fade-in-on-view text-grey-darker">I'm a 3rd year undergraduate student and Presidential Scholar at BYU, <span class="teal-accent"><b>graduating 2021</b></span> with a double B.S. in Computer Science and Statistics.  </p>
             <br />
-            <p class="text-grey-darker">I'm looking for a <a href={resumeLink} target="_blank" rel="noopener noreferrer" class="teal-accent">2021 summer internship</a> and <a href={resumeLink} rel="noopener noreferrer" class="teal-accent">full time work starting winter 2022</a></p>
+            <p class="fade-in-on-view text-grey-darker">I'm looking for a <a href={resumeLink} target="_blank" rel="noopener noreferrer" class="teal-accent">2021 summer internship</a> and <a href={resumeLink} target="_blank" rel="noopener noreferrer" class="teal-accent">full time work starting winter 2022</a></p>
           </td>
         </tr>
         <tr>
           <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">projects</h2></td>
           <td align="left">
-            <p class="text-grey-darker">Some of my favorite self-driven pedagogical projects include <ProjectLink href={tanksHref}>Tank Battles</ProjectLink>, <ProjectLink href={corridorsHref}>Corridors</ProjectLink>, and <ProjectLink href={politweetHref}>Politweet</ProjectLink>.  Older projects include <ProjectLink href={courseapiHref}>BYU Course API</ProjectLink> and <ProjectLink href={qlearnHref}>Rat Run</ProjectLink>.</p>
+            <p class="fade-in-on-view text-grey-darker">Some of my favorite self-driven pedagogical projects include <ProjectLink href={tanksHref}>Tank Battles</ProjectLink>, <ProjectLink href={corridorsHref}>Corridors</ProjectLink>, and <ProjectLink href={politweetHref}>Politweet</ProjectLink>.  Older projects include <ProjectLink href={courseapiHref}>BYU Course API</ProjectLink> and <ProjectLink href={qlearnHref}>Rat Run</ProjectLink>.</p>
           </td>
         </tr>
         <tr>
           <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">blog</h2></td>
           <td align="left">
-            <p class="text-grey-darker">Nothing yet.</p>
+            <p class="fade-in-on-view text-grey-darker">Nothing yet.</p>
           </td>
         </tr>
       </table>
@@ -203,6 +205,5 @@ const CompanyColumn = ({ title, logo, role, children }) => (
 
   </div>
 )
-
 
 export default IndexPage
