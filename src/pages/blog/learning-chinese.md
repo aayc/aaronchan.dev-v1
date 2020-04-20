@@ -1,6 +1,7 @@
 ---
 path: "/blog/chinese"
 date: "2019-04-10"
+date_string: "April 10th, 2020"
 title: "Learning Chinese"
 --- 
 

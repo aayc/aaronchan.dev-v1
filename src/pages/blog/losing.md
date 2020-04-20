@@ -1,6 +1,7 @@
 ---
 path: "/blog/losing"
-date: "2019-04-19"
+date: "2020-04-19"
+date_string: "April 19th, 2020"
 title: "Losing"
 --- 
 

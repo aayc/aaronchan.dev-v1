@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleDown, faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -105,7 +106,30 @@ const MobileSplash = () => (
 
 )
 
-const About = () => (
+const About = () =>{
+    /*const { data } = useStaticQuery(
+      graphql`
+        query {
+          allMarkdownRemark(
+            limit: 3
+            sort: { order: DESC, fields: [frontmatter___date] }
+          ) {
+            edges {
+              node {
+                frontmatter {
+                  title
+                  path
+                }
+              }
+            }
+          }
+        }
+      `
+    )
+  console.log("Data", data)
+    //const { posts } = data*/
+
+    return (
     <div class="flex scroll-snap-item" style={{
       margin: "0 auto",
       height: "100vh",
@@ -136,12 +160,45 @@ const About = () => (
         <tr>
           <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">blog</h2></td>
           <td align="left">
-            <p class="fade-in-on-view text-grey-darker">Nothing yet.</p>
+            <ul class="ml-4 text-grey-darker list-disc">
+              <StaticQuery
+                query={graphql`
+                  query {
+                    allMarkdownRemark(
+                      sort: { order: DESC, fields: [frontmatter___date] }
+                    ) {
+                      edges {
+                        node {
+                          frontmatter {
+                            title
+                            date_string
+                            path
+                          }
+                        }
+                      }
+                    }
+                  }
+                `}
+                render={data => (
+                  data.allMarkdownRemark.edges.map(edge => {
+                    let title = edge.node.frontmatter.title
+                    let date = edge.node.frontmatter.date_string
+                    let path = edge.node.frontmatter.path
+                    return (
+                      <li class="my-2">
+                        <a class="teal-accent" href={path} target="_blank" rel="noopener noreferrer">{title + " (" + date + ")"} </a>
+                      </li>
+                    )
+                  })
+                )}
+              />
+            </ul>
           </td>
         </tr>
       </table>
   </div>
-)
+  )
+}
 
 const WorkExperience = () => (
     <div class="scroll-snap-item" style={{

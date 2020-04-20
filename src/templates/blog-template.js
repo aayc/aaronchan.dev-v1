@@ -7,13 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { graphql } from "gatsby"
 
-function parseDate(s) {
-  const date = Date.parse(s)
-  const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' })
-  const [{ value: mo },,{ value: da },,{ value: ye }] = dtf.formatToParts(date)
-  return `${mo} ${da} ${ye}`
-}
-
 export default function Template({
   data,
 }) {
@@ -37,7 +30,7 @@ export default function Template({
         </div>
         <div class="pl-16 pt-16 max-w-2xl">
           <h1 class="text-gray-700">{frontmatter.title}</h1>
-          <h3 class="text-gray-600 -mt-4">{parseDate(frontmatter.date)}</h3>
+          <h3 class="text-gray-600 -mt-4">{frontmatter.date_string}</h3>
           <br />
           <div
             class="pb-16"
@@ -55,6 +48,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "YYYY-MM-DD")
+        date_string
         path
         title
       }
