@@ -141,7 +141,6 @@ const About = () => (
         </tr>
       </table>
   </div>
-
 )
 
 const WorkExperience = () => (
@@ -182,7 +181,6 @@ const WorkExperience = () => (
         </CompanyColumn>
       </div>
     </div>
-
 )
 
 const CompanyColumn = ({ title, logo, role, children }) => (
@@ -198,11 +196,9 @@ const CompanyColumn = ({ title, logo, role, children }) => (
     <br />
     <br />
     </center>
-   
     <div style={{marginLeft: 70, marginRight: 10}}>
       {children}
     </div>
-
   </div>
 )
 
