@@ -26,6 +26,7 @@ export default function Template({
   const fmtHtml2 = fmtHtml.replace("<a", "<a target='_blank'")
   return (
     <Layout>
+      <SEO title="Blog" />
       <div class="flex min-h-screen m-auto">
         <div class="w-1/4 text-right" style={{ paddingTop: "9.4rem" }}>
           <a href="/" style={{float: "right"}} rel="noopener noreferrer">

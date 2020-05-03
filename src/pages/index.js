@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import SEO from "../components/seo"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleDown, faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -35,6 +36,7 @@ const IndexPage = () => {
   if (!isMobileDevice()) {
     return (
       <Layout>
+        <SEO title="Home"/>
         <Splash />
         <About />
         <WorkExperience />
