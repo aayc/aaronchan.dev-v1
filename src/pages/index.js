@@ -107,28 +107,6 @@ const MobileSplash = () => (
 )
 
 const About = () =>{
-    /*const { data } = useStaticQuery(
-      graphql`
-        query {
-          allMarkdownRemark(
-            limit: 3
-            sort: { order: DESC, fields: [frontmatter___date] }
-          ) {
-            edges {
-              node {
-                frontmatter {
-                  title
-                  path
-                }
-              }
-            }
-          }
-        }
-      `
-    )
-  console.log("Data", data)
-    //const { posts } = data*/
-
     return (
     <div class="flex scroll-snap-item" style={{
       margin: "0 auto",

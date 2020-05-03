@@ -3,7 +3,16 @@ path: "/blog/chinese"
 date: "2019-04-10"
 date_string: "April 10th, 2020"
 title: "Learning Chinese"
+category: "experience"
 --- 
 
-I woke up on Sunday and found out that the scholarship that I had wanted since
-before I ever entered college had been given to two other students.
+I'm learning Chinese from scratch, I didn't purchase any big programs, and I
+only attended one introductory college course.  The rest of it has been on my
+own.
+
+`how does code look`
+
+```
+How about blocks of code like this
+with multiple lines?
+```
