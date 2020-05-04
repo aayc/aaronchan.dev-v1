@@ -22,8 +22,8 @@ export default function Template({
 }) {
   const { markdown, posts } = data
   const { frontmatter, html } = markdown
-  const fmtHtml = html.replaceAll("</p>", "</p><br />").replaceAll("</pre>", "</pre><br />")
-  const fmtHtml2 = fmtHtml.replaceAll("<ul", "<ul class='list-disc'").replaceAll("<h3", "<br /><h3")
+  const fmtHtml = html.replace(/<\/p>/g, "</p><br />").replace(/<\/pre>/g, "</pre><br />")
+  const fmtHtml2 = fmtHtml.replace(/<ul/g, "<ul class='list-disc'").replace(/<h3/g, "<br /><h3")
   return (
     <Layout>
       <SEO title="Blog" />
