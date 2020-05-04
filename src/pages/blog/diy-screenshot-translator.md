@@ -5,16 +5,16 @@ date_string: "May 4th, 2020"
 title: "DIY Chi-Eng Screenshot Translator"
 category: "walkthrough"
 --- 
-Lately I've been studying Mandarin Chinese and I decided that I should try changing my computer's language to Chinese.  It turns out that there are a bunch of obscure phrases like "File" and "Open in new tab" that I didn't know how to read.  Chrome extensions didn't cover all the cases, and I didn't want to pay for an app, so I built my own in just about 15 minutes.
+Lately I've been studying Mandarin Chinese and I decided that I should try changing my computer's language to Chinese.  It turns out that there are a bunch of obscure phrases like "File" and "Open in new tab" that I didn't know how to read.  Chrome extensions didn't cover all the cases, and I didn't want to pay for an app, so I built my own in less than an afternoon.
 
-So, want to be able to translate anything on your screen just by snapping a screenshot of it?  Let's build it.
+So, want to be able to translate anything on your screen just by snapping a screenshot of it?  Let's build it!
 
 Because of the easy screencapture and Automator tools, this walkthrough is meant for Mac users. [This repository](https://github.com/OneMoreGres/ScreenTranslator) looks interesting for Windows and Linux users.
 
 The full code is available [here]().
 
 ### Handling image translation
-We'll need a Python script that can extract and translate text from an image. For the text extraction (that is, an image of a letter to the letter itself), we'll use [Tesseract](https://github.com/tesseract-ocr/tesseract) a library originally made by HP, open sourced in 2005 and now maintained by Google.  We'll use it through a library called [pytesseract](https://pypi.org/project/pytesseract/)
+We'll need a Python script that can extract and translate text from an image. For the text extraction (that is, an image of a letter to the letter itself), we'll use [Tesseract](https://github.com/tesseract-ocr/tesseract), a library originally made by HP, open sourced in 2005 and now maintained by Google.  We'll use it in Python through [pytesseract](https://pypi.org/project/pytesseract/)
 
 As an extra step, let's use the [pinyin](https://pypi.org/project/pinyin/) library to translate Chinese characters to pinyin.  If you're using a different language, this wouldn't be necessary.
 
@@ -51,7 +51,7 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-And install pytesseract, pinyin and googletrans:
+And install `pytesseract`, `pinyin` and `googletrans`:
 
 ``` sh
 pip3 install pytesseract
@@ -75,7 +75,7 @@ import pytesseract
 import pinyin
 ```
 
-Let's do some argument parsing ([what's that?]()) to make our program more flexible:
+Let's do some argument parsing ([what's that?](https://docs.python.org/3/library/argparse.html)) to make our program more flexible:
 
 ``` python
 import argparse
@@ -85,7 +85,7 @@ parser.add_argument("--src", default="chi_tra")
 args = parser.parse_args()
 ```
 
- Notice that the parser's **src** argument means the source language (chi\_tra is traditional Chinese but there are many [options](https://www.loc.gov/standards/iso639-2/php/code_list.php)).  Let's assign the variables we'll need, including the source language, Google Translator object, and image itself:
+ Notice that the parser's **src** argument is the **source language** (chi\_tra is traditional Chinese but there are many [options](https://www.loc.gov/standards/iso639-2/php/code_list.php)).  Let's assign the variables we'll need, including the source language, Google Translator object, and image itself:
 
 ``` python
 lang = args.src
@@ -159,3 +159,4 @@ Now go to System Preferences and under Keyboards > Shortcuts > Services, set a h
 
 - I've noticed that on large screens, tesseract performance degrades - you might need to make text bigger in order to have more accurate recognition.
 - Every time you modify the Automator application, you will need to set the permissions again
+- Stuck?  <a href="mailto:aaron.y.chan64@gmail.com">Email me</a>.
