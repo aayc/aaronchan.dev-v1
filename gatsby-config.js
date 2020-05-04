@@ -43,7 +43,36 @@ module.exports = {
         }
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              // This toggles the display of line numbers globally alongside the code.
+              // To use it, add the following line in gatsby-browser.js
+              // right after importing the prism color scheme:
+              //  require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+              // Defaults to false.
+              // If you wish to only show line numbers on certain code blocks,
+              // leave false and use the {numberLines: true} syntax below
+              showLineNumbers: false,
+              escapeEntities: {},
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
