@@ -138,7 +138,7 @@ const About = () =>{
           </td>
         </tr>
         <tr>
-          <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest">blog</h2></td>
+          <td align="right" style={{width: "50%"}} class="teal-border-td"><h2 class="text-grey-darkest"><a target="_blank" rel="noopener noreferrer" href="/blog/hello-world">blog</a></h2></td>
           <td align="left">
             <ul class="ml-4 text-grey-darker list-disc">
               <StaticQuery
