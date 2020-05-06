@@ -146,6 +146,7 @@ const About = () =>{
                   query {
                     allMarkdownRemark(
                       sort: { order: DESC, fields: [frontmatter___date] }
+                      limit: 3
                     ) {
                       edges {
                         node {
