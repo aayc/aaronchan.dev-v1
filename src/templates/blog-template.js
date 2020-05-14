@@ -37,7 +37,7 @@ export default function Template({
           <br />
           <PostLinkList posts={posts} title={"Guides"} category={"guide"}/>
           <br />
-          <PostLinkList posts={posts} title={"Daily Blog"} category={"daily"}/>
+          <PostLinkList posts={posts} title={"Archive"} category={"archive"}/>
         </div>
         <div class="pl-16 pt-16 max-w-4xl">
           <h1 class="text-gray-700">{frontmatter.title}</h1>
